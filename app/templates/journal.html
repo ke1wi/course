@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block styles %}
+<link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet" />
+{% endblock styles %} {% block body %}
+<h2>Журнал оцінок для студента {{ student.name }}</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Заняття</th>
+      <th>Оцінка</th>
+      <th>Дата</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for record in journal %}
+    <tr>
+      <td>{{ record.lesson.name }}</td>
+      <td>{{ record.mark }}</td>
+      <td>{{ record.date }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock body %}

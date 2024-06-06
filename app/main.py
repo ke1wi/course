@@ -13,11 +13,9 @@ app.mount(
     name="static",
 )
 
+
 for router in routers:
     app.include_router(router)
 
 
 logging.basicConfig(level="DEBUG")
-
-
-
