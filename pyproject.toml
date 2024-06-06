@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "course2"
+version = "0.1.0"
+description = ""
+authors = ["Volodymyr Klimchuk <klimchuk.volodymyr@lll.kpi.ua>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+sqlalchemy = "^2.0.30"
+psycopg = "^3.1.19"
+alembic = "^1.13.1"
+pydantic-settings = "^2.3.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+ruff = "^0.4.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

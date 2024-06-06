@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block styles %}
+<link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet" />
+{% endblock styles %} {% block body %}
+<form action="http://localhost:8000/mark/" method="post">
+  <label for="student_id">Студент:</label>
+  <select id="student_id" name="student_id">
+    {% for student in students %}
+    <option value="{{ student.id }}">{{ student.name }}</option>
+    {% endfor %}</select
+  ><br /><br />
+
+  <label for="lesson_id">Заняття:</label>
+  <select id="lesson_id" name="lesson_id">
+    {% for lesson in lessons %}
+    <option value="{{ lesson.id }}">{{ lesson.name }}</option>
+    {% endfor %}</select
+  ><br /><br />
+
+  <label for="mark">Оцінка:</label>
+  <input type="text" id="mark" name="mark" /><br /><br />
+
+  <input type="submit" value="Проставити відмітку" />
+</form>
+{% endblock body %}
