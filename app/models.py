@@ -30,11 +30,11 @@ class Journal(Base):
     lesson = relationship("Lesson", back_populates="journal_entries")
 
 
-class Student(User):
+class Student(Base):
     __tablename__ = "students"
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False, unique=True)
-    role = Column(Enum(Role), default=Role.STUDENT)
+    name = Column(String)
+
     journal_entries = relationship("Journal", back_populates="student")
 
 
@@ -46,7 +46,7 @@ class Lesson(Base):
     journal_entries = relationship("Journal", back_populates="lesson")
 
 
-class Teacher(User):
+class Teacher(Base):
     __tablename__ = "teacher"
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False, unique=True)

@@ -2,6 +2,9 @@
 <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet" />
 {% endblock styles %} {% block body %}
 <form action="http://localhost:8000/mark/" method="post">
+  <span>Викладач: Стерненко Вадим Олександрович</span>
+  <hr>
+  <a href="#">Журнал</a>
   <label for="student_id">Студент:</label>
   <select id="student_id" name="student_id">
     {% for student in students %}
